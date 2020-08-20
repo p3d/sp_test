@@ -1,4 +1,5 @@
 # a class to display a parsed log file
+require_relative 'web_server_log_parser'
 class LogDisplay
   def initialize(filename)
     @parser = WebServerLogParser.new

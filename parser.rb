@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby 
-require_relative 'lib/web_server_log_parser.rb'
+require_relative 'lib/log_display'
 require 'pry'
 
 if ARGV.count != 1
@@ -10,10 +10,14 @@ end
 
 #puts 'There was a problem parsing that file' unless WebServerLogParser.new.parse(ARGV[0])
 
-parser = WebServerLogParser.new
-parser.parse(ARGV[0])
+# parser = WebServerLogParser.new
+# parser.parse(ARGV[0])
 
-log_display = LogDisplay.new(parser)
+log_display = LogDisplay.new(ARGV[0])
+
+puts "Pages sorted by total number of visits"
 log_display.pages_by_visits
+puts "Pages sorted number of unique visits"
 log_display.pages_by_unique_visits
+
 
