@@ -7,7 +7,7 @@ RSpec.describe 'testing error handingline in parser script' do
 
   context 'when supplied with the correct number of arguments' do
     it 'should return with a zero exit status ' do
-      expect(system("./parser.rb", 'webserverlog')).to eq true
+      expect(system("./parser.rb", 'webserver.log')).to eq true
     end
   end
 end
