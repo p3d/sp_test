@@ -16,4 +16,10 @@ class Page
     end
     visitors.size
   end
+
+  # FactoryBot needs this to work without ActiveRecord
+  # TODO extract to module perhaps?
+  def save!
+    true
+  end
 end
