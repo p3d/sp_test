@@ -7,13 +7,17 @@ if ARGV.count != 1
   exit 1
 end
 
-#puts 'There was a problem parsing that file' unless WebServerLogParser.new.parse(ARGV[0])
-
-log_display = LogDisplay.new(ARGV[0])
+begin
+  log_display = LogDisplay.new(ARGV[0])
+rescue Exception => e
+  puts "There was a problem parsing that file. #{e.message}"
+  exit 1
+end
 
 puts "Pages sorted by total number of visits"
 log_display.pages_by_visits
-puts "Pages sorted number of unique visits"
+puts ""
+puts "Pages sorted by number of unique visits"
 log_display.pages_by_unique_visits
 
 
