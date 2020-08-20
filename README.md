@@ -15,7 +15,12 @@ This code was developed using ruby 2.7.0
 
 run `bundle install` to install the necessary ruby gems
 
-run `./parser.rb webserver.log` to display the pages ranked by total visits and total unique visits
+## Run the script
+run `./parser.rb webserver.log` to display the pages ranked by total visits and total unique visits. 
+You can provide any log file which has the same structure as the provided example file, webserver.log.
+
+## Run the tests
+run `rspec spec` to run the test suite
 
 ## TODO
 As I have tried to stick to the 2.5 hour limit (allowing some time for yak shaving) there are some areas that I would like to improve.
