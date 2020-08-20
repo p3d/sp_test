@@ -7,3 +7,5 @@ gem 'rspec'
 gem 'factory_bot'
 gem 'pry'
 gem 'pry-byebug'
+
+gem 'simplecov', require: false, group: :test

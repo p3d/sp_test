@@ -14,6 +14,10 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'factory_bot'
+require 'simplecov'
+SimpleCov.start do
+  add_filter "/spec/"
+end
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
