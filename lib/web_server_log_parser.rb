@@ -2,6 +2,7 @@
 require_relative './page'
 require_relative './visit'
 class WebServerLogParser
+  attr_accessor :pages
   def initialize()
     @pages = {}
     @visits = []
@@ -24,7 +25,6 @@ class WebServerLogParser
     rescue Errno::ENOENT => e
       return false
     end
-    # read each line of the file
-    filename
+    true
   end
 end
