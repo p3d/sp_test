@@ -13,15 +13,19 @@ class LogDisplay
 
   def pages_by_visits
     sorted = @parser.pages.sort{ |a, b| b[1].visits.size <=> a[1].visits.size }
+    output = ""
     sorted.each do |_name, page|
-      puts "#{page.name} #{page.visits.size}"
+      output << "#{page.name} #{page.visits.size}\n"
     end
+    output
   end
 
   def pages_by_unique_visits
+    output = ""
     sorted = @parser.pages.sort{ |a, b| b[1].unique_visits <=> a[1].unique_visits }
     sorted.each do |_name, page|
-      puts "#{page.name} #{page.unique_visits}"
+      output << "#{page.name} #{page.unique_visits}\n"
     end
+    output
   end
 end

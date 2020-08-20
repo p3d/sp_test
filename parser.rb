@@ -15,9 +15,9 @@ rescue Exception => e
 end
 
 puts "Pages sorted by total number of visits"
-log_display.pages_by_visits
+puts log_display.pages_by_visits
 puts ""
 puts "Pages sorted by number of unique visits"
-log_display.pages_by_unique_visits
+puts log_display.pages_by_unique_visits
 
 
