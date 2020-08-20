@@ -7,11 +7,7 @@ if ARGV.count != 1
   exit 1
 end
 
-
 #puts 'There was a problem parsing that file' unless WebServerLogParser.new.parse(ARGV[0])
-
-# parser = WebServerLogParser.new
-# parser.parse(ARGV[0])
 
 log_display = LogDisplay.new(ARGV[0])
 
