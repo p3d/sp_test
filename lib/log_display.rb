@@ -1,9 +1,14 @@
 # a class to display a parsed log file
 require_relative 'web_server_log_parser'
+require_relative 'parse_exception'
 class LogDisplay
   def initialize(filename)
     @parser = WebServerLogParser.new
-    @parser.parse(filename)
+    begin
+      @parser.parse(filename) == false
+    rescue
+      raise ParseException.new('There was a problem parsing that file')
+    end      
   end
 
   def pages_by_visits

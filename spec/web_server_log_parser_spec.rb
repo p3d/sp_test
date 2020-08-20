@@ -9,8 +9,8 @@ RSpec.describe WebServerLogParser do
     end
 
     context 'when supplied with a filename which does not exist' do
-      it 'returns false' do
-        expect(WebServerLogParser.new.parse('notfound.log')).to eq false
+      it 'raises an exception' do
+        expect{WebServerLogParser.new.parse('notfound.log')}.to raise_error(Errno::ENOENT)
       end
     end
   end
