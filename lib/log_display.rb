@@ -13,6 +13,7 @@ class LogDisplay
 
   def pages_by_visits
     sorted = @parser.pages.sort{ |a, b| b[1].visits.size <=> a[1].visits.size }
+    return "No visits found in file" if sorted == []
     output = ""
     sorted.each do |_name, page|
       output << "#{page.name} #{page.visits.size}\n"
@@ -21,8 +22,9 @@ class LogDisplay
   end
 
   def pages_by_unique_visits
-    output = ""
     sorted = @parser.pages.sort{ |a, b| b[1].unique_visits <=> a[1].unique_visits }
+    return "No visits found in file" if sorted == []
+    output = ""
     sorted.each do |_name, page|
       output << "#{page.name} #{page.unique_visits}\n"
     end
